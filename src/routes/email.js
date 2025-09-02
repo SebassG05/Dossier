@@ -8,7 +8,7 @@ const router = Router();
 router.get('/health', (_req, res) => res.json({ status: 'ok' }));
 
 router.get('/preview', (req, res) => {
-  const { message = ' Desde el equipo estamos encantados de poder contactar con usted.Le comparto el dossier de como podemos ayudaros en detalle con el kit digital.', toName = 'Contacto', company = 'Tu Empresa' } = req.query;
+  const { message = ' Desde el equipo estamos encantados de poder contactar con usted. Le comparto el dossier de como podemos ayudaros en detalle con el kit digital.', toName = 'Contacto', company = 'Tu Empresa' } = req.query;
   const html = renderDossierEmail({ message, toName, company });
   res.type('html').send(html);
 });
