@@ -13,6 +13,53 @@
         50% { transform: translateY(40px) translateX(-6px) rotate(20deg); opacity: .9; }
         100% { transform: translateY(90px) translateX(6px) rotate(-15deg); opacity: 0; }
       }
+      /* Carrusel informativo */
+      .info-carousel {
+        margin: 24px auto 32px;
+        max-width: 600px;
+        background: #f8fafc;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(12,20,30,0.06);
+        padding: 24px 18px 32px 18px;
+        position: relative;
+      }
+      .carousel-track {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        min-height: 220px;
+      }
+      .carousel-slide {
+        min-width: 100%;
+        opacity: 0;
+        transition: opacity 0.4s;
+        position: absolute;
+        left: 0; top: 0;
+        padding: 0 8px;
+      }
+      .carousel-slide.active {
+        opacity: 1;
+        position: relative;
+      }
+      .carousel-controls {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .carousel-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #d1fae5;
+        border: 2px solid #34d399;
+        cursor: pointer;
+        transition: background 0.2s, border 0.2s;
+      }
+      .carousel-dot.active {
+        background: #34d399;
+        border-color: #065f46;
+      }
     </style>
   </head>
   <body style="margin:0; padding:0; background:#e4f2ea; background-image:linear-gradient(180deg,#e4f2ea 0%, #d7efe3 100%);">
@@ -56,32 +103,46 @@
                 <p style="margin:0 0 12px;">Hola, soy Sebastián Gandía. Le escribimos desde Evenor-Tech.</p>
                 <div style="margin:0 0 16px;"> Desde el equipo estamos encantados de poder contactar con usted.Le comparto el dossier de como podemos ayudaros en detalle con el kit digital.</div>
 
-                <h1 style="margin:0 0 16px; font-size:24px; line-height:1.3; color:#1a531b;">Dossier Informativo – Kit Digital para Empresas Agrícolas</h1>
-                <p style="margin:0 0 12px;">El programa Kit Digital, impulsado por el Gobierno de España, ofrece ayudas económicas para la digitalización de pequeñas y medianas empresas. A través de bonos de hasta 12.000 €, las empresas pueden acceder a soluciones digitales que mejoran su visibilidad, optimizan la gestión interna y facilitan la toma de decisiones basada en datos.</p>
+                <h1 style="margin:0 0 16px; font-size:24px; line-height:1.3; color:#1a531b;">Dossier Informativo para Empresas Agrícolas</h1>
+                <p style="margin:0 0 12px;">El programa Kit Digital, impulsado por el Gobierno de España, ofrece ayudas económicas para la digitalización de pequeñas y medianas empresas. A través de bonos de hasta 12.000 €, las empresas pueden acceder a soluciones digitales para mejorar su visibilidad, optimizan la gestión interna y facilitan la toma de decisiones basada en datos.</p>
 
-                <h2 style="margin:20px 0 8px; font-size:18px;">Beneficios para el sector agrícola</h2>
-                <ul style="margin:0 0 12px; padding-left:20px;">
-                  <li style="margin:6px 0;">Mejorar su visibilidad en internet y acceder a nuevos clientes.</li>
-                  <li style="margin:6px 0;">Automatizar procesos internos para optimizar la gestión de explotaciones y entidades.</li>
-                  <li style="margin:6px 0;">Acceder a información clave mediante analítica avanzada.</li>
-                  <li style="margin:6px 0;">Potenciar su imagen de marca y presencia en redes sociales.</li>
-                </ul>
-
-                <h2 style="margin:20px 0 8px; font-size:18px;">Soluciones digitales de Evenor-Tech</h2>
-                <ol style="margin:0 0 12px 20px;">
-                  <li style="margin:6px 0;"><strong>Diseño de página web y presencia online</strong> → Aumentar la visibilidad de la empresa y atraer nuevos clientes.</li>
-                  <li style="margin:6px 0;"><strong>Plataformas digitales de gestión</strong> → Desarrollo de herramientas personalizadas para gestionar explotaciones, clientes, socios o entidades.</li>
-                  <li style="margin:6px 0;"><strong>Gestión profesional de redes sociales</strong> → Potenciar la imagen de marca y mejorar la comunicación con el mercado.</li>
-                  <li style="margin:6px 0;"><strong>Inteligencia de negocio y analítica web</strong> → Implementar dashboards y sistemas de datos para una mejor toma de decisiones.</li>
-                </ol>
-
-                <h2 style="margin:20px 0 8px; font-size:18px;">Cómo funciona el proceso</h2>
-                <ol style="margin:0 0 12px 20px;">
-                  <li style="margin:6px 0;"><strong>Evaluación de necesidades</strong> → Análisis de la situación actual y detección de oportunidades.</li>
-                  <li style="margin:6px 0;"><strong>Solicitud de la ayuda</strong> → Evenor-Tech gestiona todo el proceso de tramitación del bono.</li>
-                  <li style="margin:6px 0;"><strong>Implantación de la solución</strong> → Desarrollo y puesta en marcha de las herramientas digitales.</li>
-                  <li style="margin:6px 0;"><strong>Acompañamiento y soporte</strong> → Seguimiento y soporte continuo para asegurar el éxito de la transformación digital.</li>
-                </ol>
+                <!-- Carrusel informativo -->
+                <div class="info-carousel">
+                  <div class="carousel-track">
+                    <div class="carousel-slide active">
+                      <h3>Beneficios para el sector agrícola</h3>
+                      <ul>
+                        <li>Mejorar su visibilidad en internet y acceder a nuevos clientes.</li>
+                        <li>Automatizar procesos internos para optimizar la gestión de explotaciones y entidades.</li>
+                        <li>Acceder a información clave mediante analítica avanzada.</li>
+                        <li>Potenciar su imagen de marca y presencia en redes sociales.</li>
+                      </ul>
+                    </div>
+                    <div class="carousel-slide">
+                      <h3>Soluciones digitales de Evenor-Tech</h3>
+                      <ol>
+                        <li><strong>Diseño de página web y presencia online</strong> → Aumentar la visibilidad de la empresa y atraer nuevos clientes.</li>
+                        <li><strong>Plataformas digitales de gestión</strong> → Desarrollo de herramientas personalizadas para gestionar explotaciones, clientes, socios o entidades.</li>
+                        <li><strong>Gestión profesional de redes sociales</strong> → Potenciar la imagen de marca y mejorar la comunicación con el mercado.</li>
+                        <li><strong>Inteligencia de negocio y analítica web</strong> → Implementar dashboards y sistemas de datos para una mejor toma de decisiones.</li>
+                      </ol>
+                    </div>
+                    <div class="carousel-slide">
+                      <h3>Cómo funciona el proceso</h3>
+                      <ol>
+                        <li><strong>Evaluación de necesidades</strong> → Análisis de la situación actual y detección de oportunidades.</li>
+                        <li><strong>Solicitud de la ayuda</strong> → Evenor-Tech gestiona todo el proceso de tramitación del bono.</li>
+                        <li><strong>Implantación de la solución</strong> → Desarrollo y puesta en marcha de las herramientas digitales.</li>
+                        <li><strong>Acompañamiento y soporte</strong> → Seguimiento y soporte continuo para asegurar el éxito de la transformación digital.</li>
+                      </ol>
+                    </div>
+                  </div>
+                  <div class="carousel-controls">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                  </div>
+                </div>
 
                 <div style="margin-top:20px; padding:12px 16px; background:#f0fdf4; border:1px solid #dcfce7; border-radius:8px; color:#14532d;">
                   ¿Te gustaría que te ayudemos con la solicitud del bono y la implantación? Responde a este correo o agenda una llamada.
@@ -95,4 +156,40 @@
       </tr>
     </table>
   </body>
+    <script>
+      // Carrusel informativo
+      document.addEventListener('DOMContentLoaded', function() {
+        var slides = document.querySelectorAll('.carousel-slide');
+        var dots = document.querySelectorAll('.carousel-dot');
+        var current = 0;
+
+        function showSlide(idx) {
+          slides.forEach(function(slide, i) {
+            slide.classList.toggle('active', i === idx);
+          });
+          dots.forEach(function(dot, i) {
+            dot.classList.toggle('active', i === idx);
+          });
+          current = idx;
+        }
+
+        dots.forEach(function(dot) {
+          dot.addEventListener('click', function() {
+            showSlide(Number(dot.dataset.slide));
+          });
+        });
+
+        // Opcional: swipe con teclado
+        var carousel = document.querySelector('.info-carousel');
+        if (carousel) {
+          carousel.tabIndex = 0;
+          carousel.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') showSlide((current + slides.length - 1) % slides.length);
+            if (e.key === 'ArrowRight') showSlide((current + 1) % slides.length);
+          });
+        }
+
+        showSlide(0);
+      });
+    </script>
   </html>

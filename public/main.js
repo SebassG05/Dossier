@@ -30,3 +30,34 @@ const updatePreview = () => {
 ['toName', 'company', 'message'].forEach(name => {
   form[name].addEventListener('input', updatePreview);
 });
+
+  // Carrusel informativo
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let current = 0;
+
+    function showSlide(idx) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === idx);
+      });
+      current = idx;
+    }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+        showSlide(Number(dot.dataset.slide));
+      });
+    });
+
+    // Opcional: swipe con teclado
+    document.querySelector('.info-carousel').addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') showSlide((current + slides.length - 1) % slides.length);
+      if (e.key === 'ArrowRight') showSlide((current + 1) % slides.length);
+    });
+
+    showSlide(0);
+  });
