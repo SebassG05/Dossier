@@ -96,7 +96,7 @@ export function buildDossierEmail({ message, toName, company } = {}) {
                   ${messageBlock}
                   ${dossierContentHtml}
                   <div style="margin-top:20px; padding:12px 16px; background:#f0fdf4; border:1px solid #dcfce7; border-radius:8px; color:${textColor};">
-                    ¿Te gustaría que te ayudemos con la solicitud del bono y la implantación? Responde a este correo o agenda una llamada.
+                    ¿Te gustaría que te ayudemos con la solicitud del bono y la implantación? Responde a este correo agendando una llamada.
                   </div>
                 </td>
               </tr>
