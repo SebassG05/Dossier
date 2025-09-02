@@ -1,3 +1,21 @@
+/* Franja diagonal decorativa para los cuadros */
+.fondo-diagonal {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(120deg, #ff6a6a 60%, transparent 100%);
+}
+
+/* Cuadros informativos más anchos y centrados en desktop */
+.cuadro-info {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
