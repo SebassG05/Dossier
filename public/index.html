@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enviar Dossier - Evenor-Tech</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Enviar Dossier Informativo</h1>
+      <p class="hint">Configura las credenciales SMTP en variables de entorno antes de enviar.</p>
+
+      <form id="emailForm" class="card">
+        <label>Para (email destinatario)
+          <input type="email" name="to" placeholder="cliente@empresa.com" required />
+        </label>
+        <div class="grid">
+          <div>
+            <label>CC (opcional)
+              <input type="text" name="cc" placeholder="cc1@ejemplo.com, cc2@ejemplo.com" />
+            </label>
+          </div>
+          <div>
+            <label>BCC (oculto, opcional)
+              <input type="text" name="bcc" placeholder="bcc@ejemplo.com" />
+            </label>
+          </div>
+        </div>
+        <label>Asunto
+          <input type="text" name="subject" value="Dossier: Kit Digital para Empresas Agrícolas" />
+        </label>
+        <div class="grid">
+          <div>
+            <label>Nombre del destinatario (opcional)
+              <input type="text" name="toName" placeholder="Nombre del contacto" />
+            </label>
+          </div>
+          <div>
+            <label>Empresa del destinatario (opcional)
+              <input type="text" name="company" placeholder="Nombre de la empresa" />
+            </label>
+          </div>
+        </div>
+        <label>Mensaje adicional (opcional)
+          <textarea name="message" rows="4" placeholder="Mensaje personal para el destinatario..."></textarea>
+        </label>
+        <button type="submit">Enviar Dossier</button>
+      </form>
+
+      <section class="preview card">
+        <h2>Vista previa del dossier</h2>
+        <iframe id="previewFrame" src="/preview" title="Vista previa"></iframe>
+      </section>
+    </main>
+
+    <script src="/main.js"></script>
+  </body>
+</html>

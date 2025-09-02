@@ -1,0 +1,25 @@
+{
+  "name": "dossier-emailer",
+  "version": "1.0.0",
+  "description": "App sencilla en Node.js para enviar por email un dossier del Kit Digital (sector agrícola) usando Nodemailer.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "keywords": [
+    "nodemailer",
+    "express",
+    "email",
+    "kit-digital",
+    "agricola"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13"
+  }
+}
