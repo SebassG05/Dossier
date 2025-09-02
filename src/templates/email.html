@@ -17,11 +17,25 @@
       .info-carousel {
         margin: 24px auto 32px;
         max-width: 600px;
-        background: #f8fafc;
         border-radius: 14px;
         box-shadow: 0 2px 12px rgba(12,20,30,0.06);
         padding: 24px 18px 32px 18px;
         position: relative;
+        overflow: hidden;
+        background: linear-gradient(120deg, #e0f7fa 0%, #f0fdf4 40%, #dbeafe 100%);
+      }
+      .info-carousel .wave {
+        position: absolute;
+        left: 0; right: 0; top: 0;
+        height: 60px;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.22;
+        animation: waveMove 8s linear infinite alternate;
+      }
+      @keyframes waveMove {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(20px); }
       }
       .carousel-track {
         display: flex;
@@ -108,6 +122,12 @@
 
                 <!-- Carrusel informativo -->
                 <div class="info-carousel">
+                  <div class="wave">
+                    <svg width="100%" height="60" viewBox="0 0 600 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0,30 Q150,60 300,30 T600,30 V60 H0 Z" fill="#a7f3d0" />
+                      <path d="M0,40 Q150,20 300,40 T600,40 V60 H0 Z" fill="#bae6fd" />
+                    </svg>
+                  </div>
                   <div class="carousel-track">
                     <div class="carousel-slide active">
                       <h3>Beneficios para el sector agrícola</h3>
