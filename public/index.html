@@ -1,72 +1,85 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Enviar Dossier - Evenor-Tech</title>
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body>
-    <main class="container">
-      <header class="hero card">
-        <div class="hero-left">
-          <!-- Logo (1 of 2 images) -->
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="logo">
-            <path d="M12 2c1 3 4 4 6 6s2 5 0 7-4 2-6 5c-2-3-5-3-6-5s-1-4 0-7S11 2 12 2z" fill="#16a34a" />
-          </svg>
-          <div>
-            <h1>Enviar Dossier — Evenor‑Tech</h1>
-            <p class="lead">Kit Digital para empresas agrícolas — soluciones prácticas, financiación y acompañamiento.</p>
-          </div>
-        </div>
-        <!-- Decorative hero (2 of 2 images; inline SVG) -->
-        <div class="hero-illu" aria-hidden="true">
-          <svg width="160" height="80" viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg">
-            <rect width="160" height="80" rx="8" fill="#ecfdf5" />
-            <g transform="translate(8,12)" fill="#34d399">
-              <circle cx="20" cy="36" r="12" />
-              <rect x="48" y="24" width="48" height="24" rx="6" />
-            </g>
-          </svg>
-        </div>
-      </header>
 
-      <form id="emailForm" class="card form-grid">
-        <div class="row">
-          <label>Para (email)
-            <input type="email" name="to" placeholder="cliente@empresa.com" required />
-          </label>
-          <label>Asunto
-            <input type="text" name="subject" value="Dossier: Kit Digital para Empresas Agrícolas" />
-          </label>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enviar Dossier - Evenor-Tech</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 
-        <div class="row small">
-          <label>Nombre (opcional)
-            <input type="text" name="toName" placeholder="Nombre del contacto" />
-          </label>
-          <label>Empresa (opcional)
-            <input type="text" name="company" placeholder="Nombre de la empresa" />
-          </label>
+<body>
+  <main class="container">
+    <header class="hero card">
+      <div class="hero-left">
+        <img src="/Evenor2.png" alt="Evenor-Tech" class="logo" style="width:auto; height:42px;">
+        <div>
+          <h1>Enviar Dossier — Evenor‑Tech</h1>
+          <p class="lead">Kit Digital para empresas agrícolas — soluciones prácticas, financiación y acompañamiento.</p>
         </div>
+      </div>
+      <div class="hero-right">
+        <img src="/KitDigital.png" alt="Kit Digital" style="height:38px; width:auto;">
+      </div>
+    </header>
 
-        <label>Mensaje (opcional)
-          <textarea name="message" rows="3" placeholder="Mensaje corto y personalizado..."></textarea>
+    <form id="emailForm" class="card form-grid">
+      <div class="form-status" id="formStatus"></div>
+
+      <div class="row">
+        <label>Para (email) *
+          <input type="email" name="to" placeholder="cliente@empresa.com" required />
+          <div class="field-hint">Email del destinatario</div>
         </label>
+        <label>Asunto
+          <input type="text" name="subject" value="Dossier: Kit Digital para Empresas Agrícolas" />
+        </label>
+      </div>
 
-        <div class="actions">
-          <button type="submit" class="primary">Enviar Dossier</button>
-          <button type="button" class="ghost" onclick="location.href='/preview'">Ver vista previa</button>
-        </div>
-      </form>
+      <div class="row small">
+        <label>Nombre del contacto
+          <input type="text" name="toName" placeholder="Nombre del contacto" />
+        </label>
+        <label>Empresa
+          <input type="text" name="company" placeholder="Nombre de la empresa" />
+        </label>
+      </div>
 
-      <section class="preview card">
+      <div class="row small">
+        <label>CC (opcional)
+          <input type="email" name="cc" placeholder="Email para copia" />
+        </label>
+        <label>BCC (opcional)
+          <input type="email" name="bcc" placeholder="Email para copia oculta" />
+        </label>
+      </div>
+
+      <label>Mensaje personalizado
+        <textarea name="message" rows="3"
+          placeholder="Mensaje corto y personalizado...">Desde el equipo de Evenor-Tech estamos encantados de poder contactar con usted. Le comparto el dossier de como podemos ayudaros en detalle con el kit digital.</textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="primary" id="submitBtn">
+          <span class="btn-text">Enviar Dossier</span>
+          <span class="btn-spinner"></span>
+        </button>
+        <button type="button" class="ghost" onclick="togglePreview()">Ver vista previa</button>
+        <button type="button" class="secondary" id="downloadPdfBtn">Descargar PDF</button>
+      </div>
+    </form>
+
+    <section class="preview card" id="previewSection">
+      <div class="preview-header">
         <h2>Vista previa</h2>
-        
-        <iframe id="previewFrame" src="/preview" title="Vista previa"></iframe>
-      </section>
-    </main>
+        <button class="close-preview" onclick="togglePreview()">&times;</button>
+      </div>
+      <iframe id="previewFrame" src="/preview" title="Vista previa"></iframe>
+    </section>
+  </main>
 
-    <script src="/main.js"></script>
-  </body>
+  <script src="/main.js"></script>
+</body>
+
 </html>

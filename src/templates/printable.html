@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier Kit Digital - Evenor Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.65cm;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        :root {
+            --primary-green: #a1db87;
+            --dark-gray: #333333;
+            --medium-gray: #595959;
+            --light-gray: #f7f7f7;
+            --very-light-green: #f0fdf4;
+            --accent-green: #8fcf70;
+            --soft-green: #c8e6b7;
+            --green-shadow: rgba(161, 219, 135, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            line-height: 1.38;
+            color: var(--dark-gray);
+            background: #fff;
+            font-size: 11.8px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 11px;
+        }
+
+        /* Header */
+        .header {
+            position: relative;
+            padding-bottom: 11px;
+            margin-bottom: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(161, 219, 135, 0.03), rgba(161, 219, 135, 0.01));
+            border-radius: 8px;
+            padding: 8px 12px 11px 12px;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-green) 0%, var(--accent-green) 50%, var(--soft-green) 100%);
+            border-radius: 0 0 8px 8px;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+
+        .logo-evenor {
+            max-width: 210px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(161, 219, 135, 0.1));
+        }
+
+        .logo-kitdigital {
+            max-height: 47px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(161, 219, 135, 0.1));
+        }
+
+        /* Título */
+        .title-section {
+            position: relative;
+            margin: 11px 0;
+            padding: 11px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(161, 219, 135, 0.12), rgba(161, 219, 135, 0.06));
+            border-radius: 8px;
+            border: 1px solid rgba(161, 219, 135, 0.2);
+            box-shadow: 0 2px 8px rgba(161, 219, 135, 0.1);
+        }
+
+        .title-section h1 {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .title-section h1::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(161, 219, 135, 0.3);
+        }
+
+        .title-section p {
+            font-size: 13.5px;
+            color: var(--medium-gray);
+            max-width: 670px;
+            margin: 9px auto 0;
+            font-weight: 400;
+        }
+
+        /* Secciones */
+        .section {
+            margin-bottom: 11px;
+        }
+
+        h2 {
+            color: var(--dark-gray);
+            font-size: 14.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            position: relative;
+            padding-left: 11px;
+            display: flex;
+            align-items: center;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-green), var(--accent-green));
+            border-radius: 2px;
+            box-shadow: 2px 0 4px rgba(161, 219, 135, 0.2);
+        }
+
+        p {
+            margin-bottom: 5px;
+            font-size: 10.8px;
+            color: var(--dark-gray);
+        }
+
+        /* Caja destacada */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--very-light-green), rgba(255, 255, 255, 0.9));
+            border-left: 4px solid var(--primary-green);
+            padding: 10px;
+            margin: 9px 0;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(161, 219, 135, 0.15);
+            border: 1px solid rgba(161, 219, 135, 0.2);
+        }
+
+        .highlight-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(161, 219, 135, 0.1), transparent);
+            border-radius: 50%;
+        }
+
+        .highlight-box h2 {
+            margin-top: 0;
+            padding-left: 0;
+            font-size: 13.5px;
+            color: var(--dark-gray);
+        }
+
+        .highlight-box h2::before {
+            display: none;
+        }
+
+        .highlight-box p {
+            font-size: 11.3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Mensaje personalizado */
+        .personalized {
+            background: linear-gradient(135deg, rgba(161, 219, 135, 0.08), rgba(161, 219, 135, 0.04));
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 11px;
+            border-left: 3px solid var(--primary-green);
+            border: 1px solid rgba(161, 219, 135, 0.15);
+            box-shadow: 0 2px 6px rgba(161, 219, 135, 0.1);
+        }
+
+        .personalized h2 {
+            margin-top: 0;
+            font-size: 13.5px;
+        }
+
+        .personalized p {
+            font-size: 11.3px;
+        }
+
+        /* Items con iconos */
+        .benefit-item {
+            display: flex;
+            margin-bottom: 5px;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            flex: 0 0 19px;
+            width: 19px;
+            height: 19px;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            border-radius: 50%;
+            margin-right: 9px;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(161, 219, 135, 0.3);
+            border: 1px solid rgba(161, 219, 135, 0.4);
+        }
+
+        .benefit-icon::before {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 11.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefit-content {
+            flex: 1;
+            font-size: 10.8px;
+            line-height: 1.35;
+        }
+
+        /* Grid de soluciones */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+            margin: 9px 0;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(161, 219, 135, 0.02));
+            border-radius: 6px;
+            padding: 8px;
+            box-shadow: 0 3px 8px rgba(161, 219, 135, 0.12);
+            border-left: 3px solid var(--primary-green);
+            border: 1px solid rgba(161, 219, 135, 0.15);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .solution-card::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(161, 219, 135, 0.08), transparent);
+            border-radius: 50%;
+        }
+
+        .solution-card h3 {
+            color: var(--dark-gray);
+            margin-top: 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            font-size: 11.3px;
+            margin-bottom: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-card h3 span {
+            color: white;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            width: 19px;
+            height: 19px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 7px;
+            font-size: 10.5px;
+            box-shadow: 0 2px 4px rgba(161, 219, 135, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .solution-card p {
+            margin-left: 26px;
+            font-size: 9.8px;
+            margin-bottom: 0;
+            line-height: 1.25;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Proceso */
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px;
+        }
+
+        .process-step {
+            display: flex;
+            position: relative;
+            background: linear-gradient(135deg, rgba(161, 219, 135, 0.06), rgba(161, 219, 135, 0.02));
+            padding: 7px;
+            border-radius: 6px;
+            border: 1px solid rgba(161, 219, 135, 0.1);
+            box-shadow: 0 2px 4px rgba(161, 219, 135, 0.08);
+        }
+
+        .step-number {
+            flex: 0 0 23px;
+            width: 23px;
+            height: 23px;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 11.5px;
+            margin-right: 7px;
+            box-shadow: 0 3px 8px rgba(161, 219, 135, 0.4);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(161, 219, 135, 0.3);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            margin: 0;
+            font-size: 10.8px;
+            line-height: 1.25;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        .step-content p {
+            font-size: 9.8px;
+            margin: 3px 0 0;
+            color: var(--medium-gray);
+        }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, var(--very-light-green), rgba(255, 255, 255, 0.95));
+            border: 2px solid var(--primary-green);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 11px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(161, 219, 135, 0.2);
+        }
+
+        .cta-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green), var(--soft-green));
+        }
+
+        .cta-box::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(161, 219, 135, 0.05), transparent);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .cta-box p {
+            font-size: 11.8px;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box strong {
+            color: var(--dark-gray);
+            font-size: 12.5px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Contacto */
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 7px;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 9.8px;
+            padding: 2px 6px;
+            border-radius: 12px;
+            background: rgba(161, 219, 135, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            filter: drop-shadow(0 1px 2px rgba(161, 219, 135, 0.3));
+        }
+
+        .footer {
+            margin-top: 9px;
+            text-align: center;
+            font-size: 8.8px;
+            color: var(--medium-gray);
+            padding-top: 7px;
+            border-top: 2px solid rgba(161, 219, 135, 0.2);
+            background: linear-gradient(90deg, transparent, rgba(161, 219, 135, 0.03), transparent);
+        }
+
+        /* Layout en tres columnas */
+        .three-column-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 9px;
+            margin: 9px 0;
+        }
+
+        .compact-section {
+            background: linear-gradient(135deg, rgba(161, 219, 135, 0.05), rgba(161, 219, 135, 0.02));
+            padding: 8px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-green);
+            border: 1px solid rgba(161, 219, 135, 0.15);
+            box-shadow: 0 2px 8px rgba(161, 219, 135, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .compact-section::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(161, 219, 135, 0.1), transparent);
+            border-radius: 50%;
+        }
+
+        .compact-section h2 {
+            font-size: 13.5px;
+            margin-bottom: 7px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .compact-section p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Efectos adicionales */
+        strong {
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        /* Optimización para impresión */
+        @media print {
+
+            .benefit-icon,
+            .step-number,
+            .solution-card h3 span {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-logos">
+                <img src="/Logo_white_bg.png" alt="Evenor Tech - Soluciones para uso y protección del suelo"
+                    class="logo-evenor">
+                <img src="/KitDigital.png" alt="Kit Digital" class="logo-kitdigital">
+            </div>
+        </div>
+
+        <!-- Título -->
+        <div class="title-section">
+            <h1>Kit Digital para PYMES</h1>
+            <p>Soluciones prácticas, financiación completa y acompañamiento especializado para la transformación digital
+                de su empresa</p>
+        </div>
+
+        <!-- Mensaje personalizado -->
+        <div class="personalized">
+            <p><b>¡Hola!</b></p>
+            <p>{{message}}</p>
+        </div>
+
+        <!-- Qué es el Kit Digital -->
+        <div class="highlight-box">
+            <h2>Qué es el Kit Digital</h2>
+            <p>El programa <strong>Kit Digital</strong>, impulsado por el Gobierno de España, ofrece <strong>ayudas
+                    económicas de hasta 12.000 €</strong> para la digitalización de PYMES. A través de bonos de hasta
+                12.000 €, las PYMES pueden acceder a soluciones digitales que mejoran su visibilidad, optimizan la
+                gestión y facilitan la toma de
+                decisiones empresariales.</p>
+        </div>
+
+        <!-- Layout en tres columnas -->
+        <div class="three-column-layout">
+            <!-- Beneficios -->
+            <div class="compact-section">
+                <h2>Beneficios para su PYME</h2>
+                <p>La digitalización permite a las PYMES:</p>
+                <div class="benefit-item">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <strong>Mejorar su visibilidad en internet</strong> y acceder a nuevos clientes
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <strong>Automatizar procesos internos</strong> para optimizar su gestión
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <strong>Acceder a información clave</strong> mediante analítica avanzada
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <strong>Potenciar su imagen de marca</strong> y presencia digital
+                    </div>
+                </div>
+            </div>
+
+            <!-- Por qué Evenor-Tech -->
+            <div class="compact-section">
+                <h2>Por qué elegir Evenor-Tech</h2>
+                <div class="benefit-item">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <strong>Especialización en soluciones digitales</strong> para PYMES
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <strong>Experiencia en implementación</strong> de herramientas avanzadas
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <strong>Acompañamiento integral</strong> durante todo el proceso
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"></div>
+                    <div class="benefit-content">
+                        <strong>Soluciones financiadas al 100%</strong> mediante el Kit Digital
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proceso -->
+            <div class="compact-section">
+                <h2>Cómo Funciona el Proceso</h2>
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Evaluación de necesidades</h3>
+                        <p>Análisis y detección de oportunidades empresariales</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Solicitud de la ayuda</h3>
+                        <p>Gestión completa de la tramitación del bono</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Implementación de soluciones</h3>
+                        <p>Desarrollo e integración adaptada</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Acompañamiento y soporte</h3>
+                        <p>Seguimiento y formación continua</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soluciones -->
+        <div class="section">
+            <h2>Soluciones Digitales de Evenor-Tech</h2>
+            <p>Como empresa especializada en transformación digital y con amplia experiencia con PYMES, ofrecemos:</p>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3><span>1</span> Diseño web y presencia online</h3>
+                    <p>Visibilidad profesional para atraer nuevos clientes y potenciar tu negocio</p>
+                </div>
+                <div class="solution-card">
+                    <h3><span>2</span> Plataformas de gestión</h3>
+                    <p>Herramientas personalizadas para optimizar la gestión de su PYME</p>
+                </div>
+                <div class="solution-card">
+                    <h3><span>3</span> Gestión de redes sociales</h3>
+                    <p>Estrategias de contenido efectivas para potenciar tu imagen de marca</p>
+                </div>
+                <div class="solution-card">
+                    <h3><span>4</span> Inteligencia de negocio</h3>
+                    <p>Dashboards y sistemas analíticos para mejorar la toma de decisiones</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA y contacto -->
+        <div class="cta-box">
+            <p>¿Te gustaría que te ayudemos con la solicitud del bono y la implementación?</p>
+            <p><strong>Contáctanos: info@evenor-tech.com</strong></p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img class="contact-icon" src="/web.png" alt="Web">
+                    <span>evenor-tech.com</span>
+                </div>
+                <div class="contact-item">
+                    <img class="contact-icon" src="/linkedin.png" alt="LinkedIn">
+                    <span>Evenor-Tech</span>
+                </div>
+                <div class="contact-item">
+                    <img class="contact-icon" src="/ig.png" alt="Instagram">
+                    <span>@evenortech</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Evenor-Tech · Soluciones para uso y protección del suelo · © 2023 Todos los derechos reservados</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-impresión (se activará cuando cargue la página)
+        window.onload = function () {
+            // Pequeña pausa para asegurar que los recursos se carguen
+            setTimeout(function () {
+                window.print();
+            }, 1200);
+        }
+    </script>
+</body>
+
+</html>
